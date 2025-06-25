@@ -1,90 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Generative Image Coding with Diffusion Prior - ICME 2025">
+  <meta property="og:title" content="Generative Image Coding with Diffusion Prior" />
+  <meta property="og:description" content="A generative compression method leveraging pretrained diffusion models for perceptual image coding." />
+  <meta property="og:url" content="https://yourdomain.github.io/generative-image-coding/" />
+  <meta property="og:image" content="static/images/sub_comp.png" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generative Image Coding with Diffusion Prior">
+  <meta name="twitter:description" content="Diffusion-prior-based image compression for AI-generated and natural content." />
+  <meta name="twitter:image" content="static/images/sub_comp.png">
+  <meta name="keywords" content="generative image coding, diffusion, compression, perceptual quality">
   <title>Generative Image Coding with Diffusion Prior</title>
+  <link rel="icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
-  <section class="section">
-    <main class="container content">
-      <header class="content">
-        <h1 class="title is-3">Generative Image Coding with Diffusion Prior</h1>
-        <h3 class="subtitle is-5">ICME 2025</h3>
-        <p>Jianhui Chang, China Telecom Cloud Computing Research Institute</p>
-        <nav class="mt-2">
-          <a href="static/papers/372.pdf">[Paper PDF]</a>
-          <a href="static/papers/ICME_supplementary.pdf">[Supplementary]</a>
-          <!-- <a href="https://github.com/yourusername/generative-image-coding">[Code]</a> -->
-        </nav>
-        <p style="font-size: 0.9em; margin-top: 0.5em;">Camera-ready version for presentation only. Not the final published PDF.</p>
-      </header>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title">Generative Image Coding with Diffusion Prior</h1>
+        <h2 class="subtitle is-4">
+          <a href="https://scholar.google.com/citations?hl=en&user=jpjztNQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Jianhui Chang</a>
+        </h2>
+        <p class="is-size-5">China Telecom Cloud Computing Research Institute<br>IEEE ICME 2025</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="content mt-6">
-        <h2 class="title is-4">🔍 TL;DR</h2>
-        <p>
-          We propose a generative image coding framework that leverages pretrained diffusion models to achieve high perceptual quality at extremely low bitrates. The method achieves up to <strong>79% bitrate savings over VVC</strong> and generalizes well across both AI-generated and natural content.
-        </p>
-      </section>
-
-      <section class="content mt-6">
-        <h2 class="title is-4">🎯 Key Contributions</h2>
-        <ul>
-          <li>Propose a novel diffusion-prior-based image compression framework</li>
-          <li>Design a lightweight adapter and attentive fusion module for high-fidelity decoding</li>
-          <li>Introduce a color distribution renormalization technique for fidelity enhancement</li>
-          <li>Enable flexible adaptation to multiple pretrained diffusion models</li>
-          <li>Demonstrate superior performance on AIGC and natural image datasets</li>
-        </ul>
-      </section>
-
-      <section class="content mt-6">
-        <h2 class="title is-4">📷 Method Overview</h2>
-        <figure class="image is-4by3">
-          <img src="static/images/main_frame2.png" alt="Framework Diagram">
-        </figure>
-        <p>
-          The image encoder and entropy model produce compressed latents, which are transformed by a lightweight adapter and fused with U-Net features in a latent diffusion model to guide high-fidelity image reconstruction.
-        </p>
-      </section>
-
-      <section class="content mt-6">
-        <h2 class="title is-4">📊 Results</h2>
-        <p><strong>R-D Curve</strong> on AIGC Dataset (DiffusionDB):</p>
-        <figure class="image is-4by3">
-          <img src="static/images/AIGC_RD.png" alt="AIGC RD Curve">
-        </figure>
-
-        <p><strong>R-D Curve</strong> on Kodak Dataset (Natural Images):</p>
-        <figure class="image is-4by3">
-          <img src="static/images/kodak_RD.png" alt="Kodak RD Curve">
-        </figure>
-
-        <p><strong>Qualitative Comparison</strong> (zoom for details):</p>
-        <figure class="image is-4by3">
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="image">
           <img src="static/images/sub_comp.png" alt="Visual Comparison">
         </figure>
-      </section>
+        <h2 class="subtitle has-text-centered">
+          Qualitative comparison on AIGC content. Our method produces sharp, high-fidelity reconstructions that outperform prior compression standards in perceptual quality at ultra-low bitrates.
+        </h2>
+      </div>
+    </div>
+  </section>
 
-      <section class="content mt-6">
-        <h2 class="title is-4">📚 Citation</h2>
-        <pre>
-@inproceedings{chang2025generative,
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              As generative technologies advance, visual content has evolved into a complex mix of natural and AI-generated images, driving the need for more efficient coding techniques that prioritize perceptual quality. Traditional codecs and learned methods struggle to maintain subjective quality at high compression ratios, while existing generative approaches face challenges in visual fidelity and generalization. We propose a generative coding framework leveraging diffusion priors to enhance compression performance at low bitrates. Our approach employs a pre-optimized encoder to generate generalized compressed-domain representations, integrated with pretrained model’s internal features via a lightweight adapter and attentive fusion module. A distribution renormalization method further enhances reconstruction fidelity. Extensive experiments show our method (1) outperforms existing methods in visual fidelity across low bitrates, (2) improves compression performance by up to 79% over H.266/VVC, and (3) offers an efficient solution for AI-generated content while being adaptable to broader content types.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Framework</h2>
+        <figure class="image">
+          <img src="static/images/main_frame2.png" alt="Framework Diagram">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          Overview of the proposed generative image coding system. Compressed latents are adapted and fused into the latent diffusion model to guide high-fidelity reconstruction.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container has-text-centered">
+      <h2 class="title is-3">Resources</h2>
+      <div class="buttons is-centered">
+        <a href="static/papers/372.pdf" class="button is-link is-rounded" target="_blank"><i class="fas fa-file-pdf"></i>&nbsp; Paper</a>
+        <a href="static/papers/ICME_supplementary.pdf" class="button is-link is-light is-rounded" target="_blank"><i class="fas fa-file-pdf"></i>&nbsp; Supplementary</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Selected Results</h2>
+      <div class="content has-text-centered">
+        <figure style="width:60%; margin:auto;">
+          <img src="static/images/AIGC_RD.png" alt="AIGC RD Curve">
+          <figcaption><strong>R-D Curve on AIGC dataset</strong>. Our method achieves superior perceptual quality at lower bitrates compared to VVC, TCM-VBR, HiFiC, and PerCo.</figcaption>
+        </figure>
+        <br>
+        <figure style="width:60%; margin:auto;">
+          <img src="static/images/kodak_RD.png" alt="Kodak RD Curve">
+          <figcaption><strong>R-D Curve on Kodak dataset</strong>. Demonstrates generalization to natural images with strong rate-distortion performance.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{chang2025generative,
   title={Generative Image Coding with Diffusion Prior},
   author={Chang, Jianhui},
   booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
   year={2025}
-}
-        </pre>
-      </section>
-
-      <footer class="content mt-6">
-        <p>Project page template based on <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a></p>
-      </footer>
-    </main>
+}</code></pre>
+    </div>
   </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> based on <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+              You are free to borrow the source code, just link back to this page. <br>
+              Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
