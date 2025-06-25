@@ -35,7 +35,7 @@
   <section class="hero">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <figure class="image">
+        <figure class="image is-3by2" style="max-width: 100%; margin: auto;">
           <img src="static/images/sub_comp.png" alt="Visual Comparison">
         </figure>
         <h2 class="subtitle has-text-centered">
@@ -62,9 +62,9 @@
 
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="container">
+      <div class="container" style="max-width: 960px">
         <h2 class="title is-3">Framework</h2>
-        <figure class="image">
+        <figure class="image" style="max-width: 80%; margin: auto;">
           <img src="static/images/main_frame2.png" alt="Framework Diagram">
         </figure>
         <h2 class="subtitle has-text-centered">
@@ -87,16 +87,33 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Selected Results</h2>
-      <div class="content has-text-centered">
-        <figure style="width:60%; margin:auto;">
-          <img src="static/images/AIGC_RD.png" alt="AIGC RD Curve">
-          <figcaption><strong>R-D Curve on AIGC dataset</strong>. Our method achieves superior perceptual quality at lower bitrates compared to VVC, TCM-VBR, HiFiC, and PerCo.</figcaption>
-        </figure>
-        <br>
-        <figure style="width:60%; margin:auto;">
-          <img src="static/images/kodak_RD.png" alt="Kodak RD Curve">
-          <figcaption><strong>R-D Curve on Kodak dataset</strong>. Demonstrates generalization to natural images with strong rate-distortion performance.</figcaption>
-        </figure>
+
+      <div class="content">
+        <h4 class="title is-5">Compression Performance</h4>
+        <p>
+          Our approach significantly reduces bitrate while maintaining perceptual quality. Compared with VVC and learned codecs such as Cheng-VBR and TCM-VBR, our method achieves up to 79% bitrate savings while delivering sharper textures and improved structure preservation.
+        </p>
+        <h4 class="title is-5">Generalizability</h4>
+        <p>
+          The framework generalizes well to both AI-generated and natural image domains. With minimal adapter finetuning, it achieves superior results across datasets including DiffusionDB and Kodak, demonstrating strong adaptability to diverse content distributions.
+        </p>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/AIGC_RD.png" alt="AIGC RD Curve">
+          </figure>
+        </div>
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/kodak_RD.png" alt="Kodak RD Curve">
+          </figure>
+        </div>
+      </div>
+
+      <div class="has-text-centered mt-3">
+        <p><strong>R-D Curves on AIGC and Kodak datasets</strong>. Our method achieves consistent bitrate savings and perceptual fidelity improvements over state-of-the-art baselines across diverse image types.</p>
       </div>
     </div>
   </section>
